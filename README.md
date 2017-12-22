@@ -9,6 +9,7 @@ yarn add --dev prettier
 # add npm scripts for lint
 yarn add prop-types
 yarn add react-native-extended-stylesheet@0.8.0 color@2.0.0 moment@2.18.1 @expo/vector-icons@6.2.0
+yarn install
 ```
 
 <hr />
