@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StatusBar } from 'react-native';
+import { KeyboardAvoidingView, StatusBar } from 'react-native';
 
 import { Container } from '../components/Container';
 import { Logo } from '../components/Logo';
@@ -27,20 +27,22 @@ class Home extends React.Component {
     return (
       <Container>
         <StatusBar translucent={false} barStyle="light-content" />
-        <Logo />
-        <InputWithButton
-          keyboardType="numeric"
-          buttonText={TEMP_BASE_CURRENCY}
-          defaultValue={TEMP_BASE_PRICE}
-          onPress={this.handlePressBaseCurrency}
-          onTextChange={this.handleTextChange}
-        />
-        <InputWithButton
-          buttonText={TEMP_QUOTE_CURRENCY}
-          defaultValue={TEMP_QUOTE_PRICE}
-          onPress={this.handlePressQuoteCurrency}
-          editable={false}
-        />
+        <KeyboardAvoidingView behavior="padding">
+          <Logo />
+          <InputWithButton
+            keyboardType="numeric"
+            buttonText={TEMP_BASE_CURRENCY}
+            defaultValue={TEMP_BASE_PRICE}
+            onPress={this.handlePressBaseCurrency}
+            onTextChange={this.handleTextChange}
+          />
+          <InputWithButton
+            buttonText={TEMP_QUOTE_CURRENCY}
+            defaultValue={TEMP_QUOTE_PRICE}
+            onPress={this.handlePressQuoteCurrency}
+            editable={false}
+          />
+        </KeyboardAvoidingView>
       </Container>
     );
   }
